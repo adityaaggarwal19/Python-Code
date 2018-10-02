@@ -1,0 +1,39 @@
+Arithmetic Operators
+
+Task 
+Read two integers from STDIN and print three lines where:
+
+The first line contains the sum of the two numbers.
+The second line contains the difference of the two numbers (first - second).
+The third line contains the product of the two numbers.
+
+Division
+
+Task 
+Read two integers and print two lines.
+You don't need to perform any rounding or formatting operations.
+
+If Else
+Task 
+Given an integer,n , perform the following conditional actions:
+
+If n is odd, print Weird
+If n is even and in the inclusive range of 2 to 5, print Not Weird
+If n is even and in the inclusive range of 6 to 20 , print Weird
+If n is even and greater than 20, print Not Weird
+
+Loops
+Task 
+Read an integer . For all non-negative integers i<N , print i^2. See the sample for details.
+
+Function
+Task 
+You are given the year, and you have to write a function to check if the year is leap or not.
+
+Note that you have to complete the function and remaining code is given as template.
+
+Print Function
+Read an integer .
+
+Without using any string methods, try to print the following:
+123.....N
