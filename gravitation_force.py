@@ -1,0 +1,6 @@
+mass1=float(input("Enter the mass of first object:- "))
+mass2=float(input("Enter the mass of second object:- "))
+radius=float(input("Enter the distance between the centres of the two masses:- "))
+G_force=6.673*(10**-11)
+force=(G_force*mass1*mass2)/(radius**2)
+print("Gravitational force = ",round(force,2),"Newton")
