@@ -58,52 +58,512 @@ def handle_session_end_request():
     return build_response({}, build_speechlet_response(
         card_title, speech_output, None, should_end_session))
 
-def computer_number(comp_number):
-    return {"ComputerNumber": comp_number}
+def computer_number(comp_numb):
+    return {"ComputerNumber": comp_numb}
 
 def set_number(intent, session):
 
     card_title = "Number Select"
     session_attributes = {}
     should_end_session = False
+    intNumber=0
+    
 
     if 'num' in intent['slots']:
         user_num = intent['slots']['num']['value']
         if user_num == "1":
-            num1 = 1
-            comp_num=random.randint(num1+1,num1+2)
-            session_attributes = computer_number(comp_number)
-            speech_output = "My number is " + \
-                            comp_num + " Your turn! " \
-                            "Say your number by saying my number is two"
+            
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                        "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                            "You can tell me your number by saying, " \
+                            "my number is one."
+        elif user_num== "2":
+            
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "3":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "4":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "5":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                "You can tell me your number by saying, " \
+                                "my number is one."
+        
+        elif user_num == "6":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                "You can tell me your number by saying, " \
+                                "my number is one."
+        elif user_num == "7":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "8":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "9":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "10":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "11":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "12":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "13":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "14":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "15":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "16":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "17":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        elif user_num == "18":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num=random.randint(intNumber+1,intNumber+2)
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+        
+        elif user_num == "19":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                intNumber=int(user_num)
+                comp_num= 20
+                comp_num=str(comp_num)
+                session_attributes = computer_number(comp_num)
+                speech_output = "My number is " + \
+                                comp_num + " Your turn! " \
+                                "Say your number by saying my number is two"
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+       
+        elif user_num == "20":
+            if session.get('attributes', {}) and "ComputerNumber" in session.get('attributes', {}):
+                comp_old_num = session['attributes']['ComputerNumber']
+            else:
+                comp_old_num="0"
+            n1=int(user_num)
+            c1=int(comp_old_num)
+            if n1 == c1+1 or n1 == c1+2:
+            
+                speech_output = "Congratulations, You have won the game! " 
+                reprompt_text = "You can say your number by saying, " \
+                                "my number is one"
+            else:
+                speech_output = "Sorry, You said a wrong number " \
+                               "Please try again."
+                reprompt_text = "I'm not sure what your number is. " \
+                                    "You can tell me your number by saying, " \
+                                    "my number is one."
+            speech_output = "Congratulations, You have won the game! " 
             reprompt_text = "You can say your number by saying, " \
                             "my number is one"
-        elif user_num== "2":
-            speech_output = "I now know your number is " + \
-                            user_num + \
-                            ". You can ask me about animal by saying, " \
-                            "tell me about animal name?"
-            reprompt_text = "You can ask me about animal by saying, " \
-                            "tell me about animal name?"
-        elif user_num == "3":
-            speech_output = "I now know your number is " + \
-                            user_num + \
-                            ". You can ask me about ngos by saying, " \
-                            "tell me about ngos name?"
-            reprompt_text = "You can ask me about ngos by saying, " \
-                            "tell me about ngos name?"
         else:
             speech_output = "Say a valid number " \
                             "Please try again."
-            reprompt_text = "I'm not sure what your choice is. " \
-                            "You can tell me your choice by saying, " \
-                            "my option is one."
+            reprompt_text = "I'm not sure what your number is. " \
+                            "You can tell me your number by saying, " \
+                            "my number is one."
     else:
         speech_output = "Sorry, I'm not sure what your number is. " \
                         "Please try again."
-        reprompt_text = "I'm not sure what your choice is. " \
-                            "You can tell me your choice by saying, " \
-                            "my option is one."
+        reprompt_text = "I'm not sure what your number is. " \
+                            "You can tell me your number by saying, " \
+                            "my number is one."
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 '''
