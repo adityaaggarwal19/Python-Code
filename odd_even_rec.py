@@ -4,6 +4,8 @@ def oddeven(n):
         return False
     elif n==1:
         return True
+    else if(n<0):
+        return oddeven(-n)
     else:
         return oddeven(n-2)
 n=int(input("Enter a number: "))
